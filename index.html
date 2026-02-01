@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Valentine</title>
+<title>Valentine 💖</title>
+
 <style>
 body{
-  background:#ffd6e7;
+  background: linear-gradient(135deg,#ff9ec4,#ffd6e7);
   text-align:center;
   font-family:Arial;
   padding-top:100px;
+  overflow:hidden;
 }
+
+h2{
+  color:white;
+  font-size:28px;
+}
+
 button{
-  padding:12px 25px;
+  padding:14px 28px;
   font-size:18px;
   border:none;
-  border-radius:20px;
+  border-radius:30px;
   cursor:pointer;
+  margin:10px;
 }
-#yes{ background:#ff4d88; color:white; }
-#no{ position:absolute; background:white; }
+
+#yes{
+  background:#ff2d75;
+  color:white;
+}
+
+#no{
+  position:absolute;
+  background:white;
+}
+
+.heart{
+  position:fixed;
+  color:red;
+  font-size:20px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall{
+  from{transform:translateY(-10vh);}
+  to{transform:translateY(110vh);}
+}
 </style>
 </head>
 
 <body>
 
-<h2>Will you be my Valentine?</h2>
+<h2>Sonali B, will you be my Valentine? 💖</h2>
 
-<button id="yes" onclick="alert('Yay! ❤️')">Yes</button>
-<button id="no">No</button>
+<button id="yes">Yes ❤️</button>
+<button id="no">No 😅</button>
 
 <script>
 let noBtn = document.getElementById("no");
+
 noBtn.onmouseover = function(){
-  noBtn.style.top = Math.random()*400+"px";
-  noBtn.style.left = Math.random()*400+"px";
+  noBtn.style.top = Math.random()*500+"px";
+  noBtn.style.left = Math.random()*500+"px";
 };
+
+document.getElementById("yes").onclick = function(){
+  document.body.innerHTML =
+  "<h1 style='color:white;margin-top:150px'>Yayyy Sonali B ❤️<br>You are my Valentine!</h1>";
+};
+
+// Falling hearts
+setInterval(()=>{
+  let heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(Math.random()*20+10)+"px";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),5000);
+},300);
 </script>
 
 </body>
