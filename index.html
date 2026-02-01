@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine</title>
+<style>
+body{
+  background:#ffd6e7;
+  text-align:center;
+  font-family:Arial;
+  padding-top:100px;
+}
+button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+#yes{ background:#ff4d88; color:white; }
+#no{ position:absolute; background:white; }
+</style>
+</head>
+
+<body>
+
+<h2>Will you be my Valentine?</h2>
+
+<button id="yes" onclick="alert('Yay! ❤️')">Yes</button>
+<button id="no">No</button>
+
+<script>
+let noBtn = document.getElementById("no");
+noBtn.onmouseover = function(){
+  noBtn.style.top = Math.random()*400+"px";
+  noBtn.style.left = Math.random()*400+"px";
+};
+</script>
+
+</body>
+</html>
